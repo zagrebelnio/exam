@@ -1,0 +1,5 @@
+﻿  main.cpp
+  stack.cpp
+  Generating Code...
+C:\Users\zagrebelnio\Desktop\Екзамен підготовка\Базові структури даних\15\task16\task16\stack.cpp(16): warning C4715: 'Stack::pop': not all control paths return a value
+  task16.vcxproj -> C:\Users\zagrebelnio\Desktop\Екзамен підготовка\Базові структури даних\15\task16\x64\Debug\task16.exe
