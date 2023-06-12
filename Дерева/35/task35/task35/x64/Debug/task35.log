@@ -1,0 +1,5 @@
+﻿  main.cpp
+C:\Users\zagrebelnio\Desktop\Екзамен підготовка\exam\Дерева\35\task35\task35\main.cpp(4,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  tree.cpp
+  Generating Code...
+  task35.vcxproj -> C:\Users\zagrebelnio\Desktop\Екзамен підготовка\exam\Дерева\35\task35\x64\Debug\task35.exe
