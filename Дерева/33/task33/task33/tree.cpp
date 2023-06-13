@@ -1,99 +1,75 @@
-/*#include "tree.h"
+#include "tree.h"
 
-Tree::Tree() : root(nullptr)
-{
-}
+int Tree::n = 0;
 
-void Tree::construct(string expression)
+Node* Tree::makeTree(string str, size_t first, size_t last)
 {
-	Node* current = nullptr;
-	for (int i = 0; i < expression.length(); i++) {
-		if (isOperator(expression[i])) {
-			if (root == nullptr) {
-				root = new Node{ expression[i], nullptr, nullptr };
-				current = root;
-			}
-			else {
-				Node* temp = new Node{ expression[i], nullptr, nullptr };
-				if (current->left == nullptr) {
-					current->left = temp;
-					current = current->left;
-				}
-				else if (current->right == nullptr) {
-					current->right = temp;
-					current = current->right;
-				}
-			}
+	if (first == last) {
+		Node* p = new Node(str[first]);
+		return p;
+	}
+	int priority, minPrt = 10, k;
+	for (int i = first; i <= last; i++) {
+		switch (str[i]) {
+		case '+':
+		case '-':
+			priority = 1;
+			break;
+		case '*':
+		case '/':
+			priority = 2;
+			break;
+		default:
+			priority = 10;
 		}
-		else {
-			if (current == nullptr) {
-				current = new Node{ expression[i], nullptr, nullptr };
-				root = current;
-			}
-			else {
-				Node* temp = new Node{ expression[i], nullptr, nullptr };
-				if (current->left == nullptr) {
-					current->left = temp;
-				}
-				else if (current->right == nullptr) {
-					current->right == temp;
-				}
-			}
+		if (priority <= minPrt) {
+			minPrt = priority;
+			k = i;
 		}
 	}
-}
-
-bool Tree::isOperator(char c)
-{
-	if (c == '+' || c == '-' || c == '*' || c == '/') {
-		return true;
+	Node* p = new Node;
+	p->data = str[k];
+	if (n == 0) {
+		root = p;
+		n++;
 	}
-	return false;
+	p->left = makeTree(str, first, k - 1);
+	p->right = makeTree(str, k + 1, last);
+	return p;
 }
 
-void Tree::prefix(Node* node)
+int Tree::calcTree(Node* p)
 {
-	if (node != nullptr) {
-		cout << node->data << " ";
-		prefix(node->left);
-		prefix(node->right);
+	int num1, num2;
+	if (!p->left) {
+		return p->data - '0';
 	}
+	num1 = calcTree(p->left);
+	num2 = calcTree(p->right);
+	switch (p->data) {
+	case '+':
+		return num1 + num2;
+	case '-':
+		return num1 - num2;
+	case '*':
+		return num1 * num2;
+	case '/':
+		return num1 / num2;
+	}
+	return 0;
 }
 
-void Tree::prefix()
+void Tree::print()
 {
-	prefix(root);
+	print(root);
 }
 
-int Tree::evaluate(Node* node)
+void Tree::print(Node* node)
 {
 	if (node == nullptr) {
-		return 0;
+		return;
 	}
-	if (node->left == nullptr && node->right == nullptr) {
-		return node->data - '0';
-	}
-	int left = evaluate(node->left);
-	int right = evaluate(node->right);
-	if (node->data == '+') {
-		return left + right;
-	}
-	else if (node->data == '-') {
-		return left - right;
-	}
-	else if (node->data == '*') {
-		return left * right;
-	}
-	else if (node->data == '/') {
-		return left / right;
-	}
-	else {
-		return 0;
-	}
+	print(node->left);
+	cout << node->data << " ";
+	print(node->right);
 }
-
-int Tree::evaluate()
-{
-	return evaluate(root);
-}
-*/

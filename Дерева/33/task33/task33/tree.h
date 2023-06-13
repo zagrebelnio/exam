@@ -1,22 +1,32 @@
-/*#pragma once
 #include <iostream>
 #include <string>
 
 using namespace std;
 
+class Node {
+	char data;
+	Node* left;
+	Node* right;
+public:
+	Node() : data(' '), left(nullptr), right(nullptr) {}
+	Node(char c) : data(c), left(nullptr), right(nullptr) {}
+	void show() {
+		cout << data << " ";
+		if (left) left->show();
+		if (right) right->show();
+	}
+	friend class Tree;
+};
+
 class Tree {
-	struct Node {
-		char data;
-		Node* left;
-		Node* right;
-	};
 	Node* root;
 public:
-	Tree();
-	void construct(string expression);
-	bool isOperator(char c);
-	void prefix(Node* node);
-	void prefix();
-	int evaluate(Node* node);
-	int evaluate();
-};*/
+	static int n;
+	Tree() : root(nullptr) {}
+	Node* makeTree(string, size_t, size_t);
+	int calcTree(Node*);
+	Node* getNode() { return root; }
+	void print();
+	void print(Node*);
+
+};

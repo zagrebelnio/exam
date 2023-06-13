@@ -1,2 +1,6 @@
 ﻿  main.cpp
-  task33.vcxproj -> C:\Users\zagrebelnio\Desktop\Екзамен підготовка\exam\Дерева\33\task33\x64\Debug\task33.exe
+  tree.cpp
+C:\Users\zagrebelnio\Desktop\Екзамен підготовка\exam\Дерева\33\task33\task33\tree.cpp(12,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\zagrebelnio\Desktop\Екзамен підготовка\exam\Дерева\33\task33\task33\tree.cpp(32,6): error C2065: 'n': undeclared identifier
+C:\Users\zagrebelnio\Desktop\Екзамен підготовка\exam\Дерева\33\task33\task33\tree.cpp(34,3): error C2065: 'n': undeclared identifier
+  Generating Code...
