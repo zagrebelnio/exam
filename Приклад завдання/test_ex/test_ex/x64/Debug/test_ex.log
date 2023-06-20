@@ -1,0 +1,3 @@
+﻿  main.cpp
+C:\Users\zagrebelnio\Desktop\Екзамен підготовка\exam\Приклад завдання\test_ex\test_ex\main.cpp(94,2): warning C4286: 'const std::invalid_argument &': is caught by base class ('const std::exception &') on line 91
+  test_ex.vcxproj -> C:\Users\zagrebelnio\Desktop\Екзамен підготовка\exam\Приклад завдання\test_ex\x64\Debug\test_ex.exe
