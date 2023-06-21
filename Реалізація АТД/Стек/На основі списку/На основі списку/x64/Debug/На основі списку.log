@@ -1,0 +1,3 @@
+﻿  stack.cpp
+C:\Users\zagrebelnio\Desktop\Екзамен підготовка\exam\Реалізація АТД\Стек\На основі списку\На основі списку\stack.cpp(60): warning C4715: 'Stack<int>::end': not all control paths return a value
+  На основі списку.vcxproj -> C:\Users\zagrebelnio\Desktop\Екзамен підготовка\exam\Реалізація АТД\Стек\На основі списку\x64\Debug\На основі списку.exe
